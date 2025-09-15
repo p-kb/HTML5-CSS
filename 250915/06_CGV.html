@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    .wrap > div {
+      display: flex;
+    }
+    .wrap .top {
+      height: 25px;
+      background: #e32213;
+    }
+    .wrap .top ul {
+      display: flex;
+      gap: 30px;
+      justify-content: right;
+      align-items: flex-end;
+      width: 1025px;
+      margin: 0 auto;
+    }
+    .wrap .top ul li a {
+      color: #fff;
+      font-size: 14px;
+    }
+    .wrap .menu {
+      justify-content: space-between;
+      width: 1025px;
+      margin: 10px auto;
+    }
+    .wrap .menu ul {
+      display: flex;
+      gap: 50px;
+      align-items: flex-end;
+    }
+    .wrap .menu ul li a {
+      color: #e32213;
+      font-weight: bold;
+    }
+    .wrap .vi {
+      width: 1025px;
+      margin: 20px auto;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .wrap .main {
+      width: 1025px;
+      margin: 20px auto;
+      justify-content: space-around;
+    }
+    .wrap .event {
+      width: 1025px;
+      margin: 10px auto;
+      justify-content: space-between;
+    }
+    .wrap .event > p:first-child {
+      width: 130px;
+    }
+    .wrap .event > p:nth-child(2) {
+      width: 340px;
+    }
+    .wrap .event ul {
+      width: 510px;
+    }
+    .wrap .event ul li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 7px;
+    }
+    .wrap .event ul li h3 {
+      margin-bottom: 10px;
+    }
+    .wrap .event ul li p:first-child {
+      width: 350px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .wrap .foot {
+      width: 1025px;
+      margin: 0 auto;
+      height: 70px;
+      background: #d8b978;
+    }
+    .wrap .foot p {
+      padding: 35px;
+    }
+  </style>
+  <body>
+    <div class="wrap">
+      <div class="top">
+        <ul>
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#">English</a></li>
+        </ul>
+      </div>
+      <div class="menu">
+        <p><img src="/img/CGV/image/cgv_logo.gif" alt="" /></p>
+        <ul>
+          <li><a href="#">영화예매</a></li>
+          <li><a href="#">신작개봉</a></li>
+          <li><a href="#">이벤트</a></li>
+          <li><a href="#">공지사항</a></li>
+          <li><a href="#">CGV매점</a></li>
+        </ul>
+      </div>
+      <div class="vi">
+        <p><img src="/img/CGV/image/cgv_visual.jpg" alt="" /></p>
+      </div>
+      <div class="main">
+        <p>
+          <a href="#"><img src="/img/CGV/image/cgv_img03 (3).png" alt="" /></a>
+        </p>
+        <p><img src="/img/CGV/image/cgv_img03 (4).png" alt="" /></p>
+        <p><img src="/img/CGV/image/cgv_img03 (1).png" alt="" /></p>
+        <p><img src="/img/CGV/image/cgv_img03 (2).png" alt="" /></p>
+      </div>
+      <div class="event">
+        <p>이벤트</p>
+        <p><img src="/img/CGV/image/cgv_banner.jpg" alt="" /></p>
+        <ul>
+          <li><h3>공지사항</h3></li>
+          <li>
+            <p>공지사항 제목이 들어갑니다.</p>
+            <p>2017-08-07</p>
+          </li>
+          <li>
+            <p>공지사항 제목이 들어갑니다.</p>
+            <p>2017-08-07</p>
+          </li>
+          <li>
+            <p>공지사항 제목이 들어갑니다.</p>
+            <p>2017-08-07</p>
+          </li>
+          <li>
+            <p>공지사항 제목이 들어갑니다.</p>
+            <p>2017-08-07</p>
+          </li>
+          <li>
+            <p>
+              공지사항 제목이 들어갑니다.공지사항 제목이 들어갑니다.공지사항
+              제목이 들어갑니다.공지사항 제목이 들어갑니다.
+            </p>
+            <p>2017-08-07</p>
+          </li>
+        </ul>
+      </div>
+      <div class="foot">
+        <p>All Copyrights Reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
