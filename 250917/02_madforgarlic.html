@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      .wrap {
+        background: #000;
+        font-family: "Spoqa Han Sans";
+      }
+      .wrap .topwrap {
+        width: 1190px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 0.5px solid #7f7d7a;
+      }
+      .wrap .topwrap .menu {
+        display: flex;
+        gap: 20px;
+      }
+      .wrap .topwrap .menu li a {
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        color: #7f7d7a;
+        font-weight: 700;
+      }
+      .wrap .topwrap {
+        position: relative;
+      }
+      .wrap .topwrap .menu li .sub {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 0;
+        line-height: 40px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrap .topwrap .menu li:hover .sub {
+        width: 1190px;
+        height: 50px;
+        margin: 0 auto;
+        padding-top: 25px;
+      }
+      .wrap .topwrap .menu li .sub li a {
+        color: #7f7d7a;
+      }
+      .wrap .topwrap .menu li:hover a,
+      .wrap .topwrap .menu li ul.sub li:hover a {
+        color: #fff;
+      }
+      .wrap .topwrap .menu li a {
+        position: relative;
+        padding: 0 20px;
+      }
+      .wrap .topwrap .menu > li .sub li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -12px;
+        width: 100%;
+        height: 3%;
+        background: #fff;
+        transform: scale(0);
+      }
+      .wrap .topwrap .menu > li .sub li:hover a::after {
+        transform: scale(1);
+      }
+      .wrap .topwrap .utility {
+        display: flex;
+        gap: 10px;
+      }
+      .wrap .topwrap .utility li::before {
+        content: "|";
+        font-size: 12px;
+        color: #fff;
+        padding-right: 10px;
+      }
+      .wrap .topwrap .utility li:first-child:before {
+        content: "";
+      }
+      .wrap .topwrap .utility li a {
+        font-size: 10px;
+        color: #a8a9ad;
+      }
+      .wrap .topwrap .utility li:hover a {
+        color: #fff;
+      }
+      .wrap .visual {
+        width: 1190px;
+        height: 751px;
+        margin: 0 auto;
+        margin-top: 53px;
+        background-image: url(https://cdnt.madforgarlic.com/madforgarlic/202503/20250304_ACB_1741050726866.jpg);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .wrap .addr {
+        width: 1190px;
+        margin: 0 auto;
+        padding: 70px 0 50px;
+        color: #fff;
+        font-size: 14px;
+      }
+      .wrap .addr p:first-child {
+        padding-bottom: 30px;
+      }
+      .wrap .sns {
+        width: 1190px;
+        margin: 0 auto;
+        display: flex;
+        padding-bottom: 20px;
+      }
+      .wrap .sns li {
+        width: 35px;
+        height: 30px;
+        background-image: url(https://www.madforgarlic.com/resources/pc/images/common/btn_sns_B.png);
+      }
+      .wrap .sns li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .wrap .sns li:nth-child(1) {
+        background-position: -70px 0;
+      }
+      .wrap .sns li:nth-child(1):hover {
+        background-position: -70px -30px;
+      }
+      .wrap .sns li:nth-child(2) {
+        background-position: -105px 0;
+      }
+      .wrap .sns li:nth-child(2):hover {
+        background-position: -105px -30px;
+      }
+      .wrap .foot {
+        width: 1190px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 10px;
+      }
+      .wrap .foot ul {
+        display: flex;
+      }
+      .wrap .foot ul:first-child {
+        gap: 10px;
+      }
+      .wrap .foot ul:first-child li::before {
+        content: "|";
+        font-size: 12px;
+        color: #fff;
+        padding-right: 10px;
+      }
+      .wrap .foot ul:first-child li:first-child:before {
+        padding: 0;
+      }
+      .wrap .foot ul:first-child li:first-child::before {
+        content: "";
+      }
+      .wrap .foot ul:first-child li a {
+        color: #a8a9ad;
+      }
+      .wrap .foot ul:first-child li:hover a {
+        color: #fff;
+      }
+      .wrap .foot ul:nth-child(2) li {
+        width: 132px;
+        height: 35px;
+        background-image: url(https://www.madforgarlic.com/resources/pc/images/common/btn_app_B.png);
+      }
+      .wrap .foot ul:nth-child(2) li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .wrap .foot ul:nth-child(2) li:nth-child(1):hover {
+        background-position: 0 -35px;
+      }
+      .wrap .foot ul:nth-child(2) li:nth-child(2) {
+        background-position: -132px 0;
+      }
+      .wrap .foot ul:nth-child(2) li:nth-child(2):hover {
+        background-position: -132px -35px;
+      }
+      .wrap .share {
+        position: sticky;
+        height: 40px;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+        background-color: #000;
+      }
+      .wrap .share div {
+        width: 72px;
+        height: 40px;
+        background-image: url(https://www.madforgarlic.com/resources/pc/images/common/sns-icon_B.png);
+        background-position: -40px 0;
+      }
+      .wrap .share div a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topwrap">
+        <p>
+          <img
+            src="https://www.madforgarlic.com/resources/pc/images/common/logoB_B2.png"
+            alt=""
+          />
+        </p>
+        <ul class="menu">
+          <li>
+            <a href="#">BRAND</a>
+          </li>
+          <li>
+            <a href="#">MENU</a>
+            <ul class="sub">
+              <li><a href="">APPETIZER & SALAD</a></li>
+              <li><a href="">PASTA & RICE</a></li>
+              <li><a href="">PIZZA</a></li>
+              <li><a href="">STEAK</a></li>
+              <li><a href="">MAD CUSTOMIZED SET</a></li>
+              <li><a href="">LUNCH SET</a></li>
+              <li><a href="">BEVERAGE</a></li>
+              <li><a href="">LIQUOR</a></li>
+              <li><a href="">DESSERT & SIDE</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">STORE</a>
+            <ul class="sub">
+              <li><a href="">SEARCH</a></li>
+              <li><a href="">CONCEPT</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">MEMBERSHIP</a>
+            <ul class="sub">
+              <li><a href="">멤버십 소개</a></li>
+              <li><a href="">멤버십 가입</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">EVENT</a>
+            <ul class="sub">
+              <li><a href="">이벤트</a></li>
+              <li><a href="">제휴 & 상품권</a></li>
+              <li><a href="">MAD CHALLENGE</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="utility">
+          <li><a href="#">LOG IN</a></li>
+          <li><a href="#">JOIN</a></li>
+          <li><a href="#">CUSTOMER</a></li>
+          <li><a href="#">RECRUIT</a></li>
+        </ul>
+      </div>
+      <div class="visual">
+        <a href="#"
+          ><img
+            src="https://www.madforgarlic.com/resources/pc/images/membership/visual-scroll-con.png"
+            alt=""
+        /></a>
+      </div>
+      <div class="addr">
+        <p>
+          (주)엠에프지코리아 서울시 강남구 학동로 306, 곤비빌딩 B2F / 우편번호:
+          06098<br />
+          대표문의: 02-2286-8800<br />
+          사업자번호: 261-81-16391 ㅣ 대표자: 윤다예
+        </p>
+        <p>COPYRIGHT ⓒ MFGKOREA ALL RIGHTS RESERVED.</p>
+      </div>
+      <ul class="sns">
+        <li>
+          <a href="#"></a>
+        </li>
+        <li>
+          <a href="#"></a>
+        </li>
+      </ul>
+      <div class="foot">
+        <ul>
+          <li><a href="">PRIVACY POLICY</a></li>
+          <li><a href="">TERMS OF SERVICE</a></li>
+          <li><a href="">CUSTOMER</a></li>
+          <li><a href="">RECRUIT</a></li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#"></a>
+          </li>
+          <li>
+            <a href="#"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="share">
+        <div><a href="#"></a></div>
+      </div>
+    </div>
+  </body>
+</html>
