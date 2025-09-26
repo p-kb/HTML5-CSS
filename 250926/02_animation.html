@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .ani {
+        text-align: center;
+      }
+      .box {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .box > p {
+        position: absolute;
+      }
+      .btn {
+        margin-top: 70px;
+      }
+      .btn label {
+        border: 1px solid;
+        border-radius: 100px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      .btn label:hover {
+        background: #ccc;
+      }
+      #left:checked ~ .btn label:nth-child(1),
+      #right:checked ~ .btn label:nth-child(2),
+      #off:checked ~ .btn label:nth-child(3) {
+        background: #000;
+        color: #fff;
+      }
+
+      @keyframes left {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-1080deg);
+        }
+      }
+      @keyframes right {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(1080deg);
+        }
+      }
+      #left:checked ~ .box p:nth-child(2) img {
+        animation-name: left;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      #right:checked ~ .box p:nth-child(2) img {
+        animation-name: right;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      /* #Off:right:checked ~ .box p:nth-child(2) img {
+        animation-play-state: paused;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="ani">
+      <input type="radio" name="btn" id="left" />
+      <input type="radio" name="btn" id="right" />
+      <input type="radio" name="btn" id="off" />
+
+      <div class="box">
+        <p><img src="/img/pipe.png" alt="" /></p>
+        <p><img src="/img/propeller.png" alt="" /></p>
+      </div>
+
+      <div class="btn">
+        <label for="left">Turn Left</label>
+        <label for="right">Turn Right</label>
+        <label for="off">Off</label>
+      </div>
+    </div>
+  </body>
+</html>
