@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      ul.list {
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+      ul li {
+        border: 1px solid #e5e5e5;
+        border-radius: 20px;
+        padding: 32px;
+        width: 232px;
+        height: 359px;
+        background: #fff;
+        transition: 0.5s;
+      }
+      ul li a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      ul li .subtit {
+        display: flex;
+        justify-content: space-between;
+      }
+      ul li .imgAni {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+      }
+      ul li .txt {
+        text-align: center;
+        background: #f1f4fb;
+        padding: 8px 0;
+        border-radius: 100px;
+      }
+      ul li:hover {
+        transform: translateY(-40px);
+        border-color: #356cff;
+        background: #f7f8fc;
+      }
+      ul li:hover .txt {
+        background: #fff;
+      }
+      ul li:nth-child(1) .imgAni {
+        background-image: url(/img/icon_main_data.png);
+      }
+      ul li:nth-child(1):hover .imgAni {
+        background-image: url(/img/icon_main_data_play.png);
+        background-size: 10920px 120px;
+        animation: adplay 3s steps(91) infinite;
+      }
+      ul li:nth-child(2) .imgAni {
+        background-image: url(/img/icon_main_solution.png);
+      }
+      ul li:nth-child(2):hover .imgAni {
+        background-image: url(/img/icon_main_solution_play.png);
+        background-size: 11040px 120px;
+        animation: solplay 3s steps(92) infinite;
+      }
+      ul li:nth-child(3) .imgAni {
+        background-image: url(/img/icon_main_ad.png);
+      }
+      ul li:nth-child(3):hover .imgAni {
+        background-image: url(/img/icon_main_ad_play.png);
+        background-size: 10920px 120px;
+        animation: adplay 3s steps(91) infinite;
+      }
+      ul li:nth-child(4) .imgAni {
+        background-image: url(/img/icon_main_api.png);
+      }
+      ul li:nth-child(4):hover .imgAni {
+        background-image: url(/img/icon_main_api_play.png);
+        background-size: 10920px 120px;
+        animation: adplay 3s steps(91) infinite;
+      }
+      @keyframes adplay {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: -10920px 0;
+        }
+      }
+      @keyframes solplay {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: -11040px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li>
+        <a href="#">
+          <div class="title">
+            <p class="subtit"><span>다양한</span><span>></span></p>
+            <h1>Data서비스</h1>
+          </div>
+          <p class="imgAni"></p>
+          <p class="txt">Data One-Stop Service</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div class="title">
+            <p class="subtit"><span>혁신적인</span><span>></span></p>
+            <h1>솔루션서비스</h1>
+          </div>
+          <p class="imgAni"></p>
+          <p class="txt">상권분석, 시장 모니터링</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div class="title">
+            <p class="subtit"><span>스마트한</span><span>></span></p>
+            <h1>광고서비스</h1>
+          </div>
+          <p class="imgAni"></p>
+          <p class="txt">최적의 고객 타겟팅</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div class="title">
+            <p class="subtit"><span>탁월한</span><span>></span></p>
+            <h1>API서비스</h1>
+          </div>
+          <p class="imgAni"></p>
+          <p class="txt">Data 실시간 활용</p>
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>
