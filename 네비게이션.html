@@ -26,7 +26,6 @@
         margin: 0 auto;
         justify-content: space-between;
         align-items: center;
-        position: relative;
       }
       nav .menu {
         display: flex;
@@ -52,8 +51,8 @@
         text-align: center;
         font-size: 14px;
         opacity: 0;
+        z-index: 1;
         line-height: 2;
-        background: rgba(255, 255, 255, 0.7);
       }
       nav > .menu > li .sub li:hover a {
         text-decoration: underline;
@@ -61,6 +60,21 @@
       }
       nav > .menu:hover > li .sub {
         opacity: 1;
+      }
+      nav .subbg {
+        position: absolute;
+        left: 0;
+        top: 123px;
+        width: 100%;
+        height: 205px;
+        background: rgba(242, 242, 242, 0.9);
+        opacity: 0;
+      }
+      nav .menu:hover ~ .subbg {
+        opacity: 1;
+      }
+      nav .right {
+        position: relative;
       }
       nav .right .lang {
         display: flex;
@@ -72,7 +86,7 @@
         font-weight: 700;
         position: absolute;
         right: 0;
-        top: 20px;
+        top: -10px;
       }
       nav .right .lang li:nth-child(2)::before {
         content: "|";
@@ -95,6 +109,7 @@
       }
       .visual {
         width: 100%;
+        max-width: 2560px;
         height: 720px;
         margin: 0 auto;
         background-image: url(http://caffebene.co.kr/uploads/banner/20241128813084.jpg);
@@ -173,6 +188,7 @@
         </ul>
         <a href="#" class="right">가맹문의</a>
       </div>
+      <div class="subbg"></div>
     </nav>
     <div class="visual"></div>
   </body>
