@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "NanumBarunGothic";
+        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "NanumBarunGothic";
+        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+        font-weight: 700;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "NanumBarunGothic";
+        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+        font-weight: 300;
+        font-display: swap;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      ul {
+        list-style: none;
+      }
+      section {
+        width: 95%;
+        max-width: 940px;
+        margin: 0 auto;
+      }
+      section ul {
+        width: 100%;
+        height: 424px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3px;
+      }
+      section ul li {
+        background-size: cover;
+        background-position: center;
+      }
+      section ul li:nth-child(1) {
+        background-image: url(https://www.shinsegaefood.com/images/management/bg_info_1.jpg);
+      }
+      section ul li:nth-child(2) {
+        background-image: url(https://www.shinsegaefood.com/images/management/bg_info_2.jpg);
+      }
+      section ul li:nth-child(3) {
+        background-image: url(https://www.shinsegaefood.com/images/management/bg_info_3.jpg);
+      }
+      section ul li a {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        font-family: NanumBarunGothic;
+      }
+      section ul li a h1 {
+        font-size: 30px;
+      }
+      section ul li a p {
+        font-size: 15px;
+        padding-top: 16px;
+        line-height: 22px;
+      }
+      section ul li:hover a {
+        background: rgba(0, 0, 0, 0.8);
+      }
+      section ul li:hover a h1 {
+        color: #f29b76;
+      }
+      @media screen and (max-width: 960px) {
+        section ul {
+          grid-template-columns: 1fr;
+        }
+        section ul li a h1 {
+          font-size: 16px;
+        }
+        section ul li a p {
+          font-size: 12px;
+          padding-top: 10px;
+        }
+        section ul li a p br {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <ul>
+        <li>
+          <a href="#">
+            <h1>경영정보</h1>
+            <p>
+              주주 및 이사회 구성을<br />
+              안내해 드립니다.
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h1>재무정보</h1>
+            <p>
+              영업현황 및 재무제표를<br />
+              안내해 드립니다.
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h1>주식정보</h1>
+            <p>
+              주가정보를<br />
+              안내해 드립니다
+            </p>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
