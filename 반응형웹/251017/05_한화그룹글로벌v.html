@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .con {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        gap: 0.8vw;
+        justify-content: center;
+        text-align: center;
+      }
+      .con li {
+        flex: 1;
+        background: #efe8e4;
+        border-radius: 10px;
+        padding: 2em 1em;
+      }
+      .con li > p {
+        height: 17vh;
+      }
+      .con li img {
+        height: 100%;
+        object-fit: cover;
+      }
+      .con li .txt {
+        margin-top: 10%;
+        word-break: keep-all;
+      }
+      .con li .txt h3 {
+        font-size: 1.5vw;
+      }
+      .con li .txt p::before {
+        content: "";
+        height: 1px;
+        width: 100%;
+        background: #aaa;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .con li .txt p {
+        position: relative;
+        margin-top: 6%;
+        padding-top: 6%;
+        font-size: 1vw;
+      }
+      @media screen and (max-width: 1024px) {
+        .con li .txt p br {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        .con {
+          flex-direction: column;
+        }
+        .con li {
+          display: flex;
+          align-items: center;
+          gap: 50px;
+          text-align: left;
+        }
+        .con li > p {
+          width: 20%;
+          display: flex;
+          justify-content: center;
+        }
+        .con li .txt {
+          margin-top: 0;
+          word-break: keep-all;
+        }
+        .con li .txt p::before {
+          width: 100%;
+        }
+        .con li .txt h3 {
+          font-size: 2vw;
+        }
+        .con li .txt p {
+          font-size: 1.6vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="con">
+      <li>
+        <p>
+          <img
+            src="https://www.hanwha.com/assets/img/main/sustainable-and-inclusive-growth.svg"
+            alt=""
+          />
+        </p>
+        <div class="txt">
+          <h3>
+            Sustainable and<br />
+            Inclusive <span>Growth</span>
+          </h3>
+          <p>
+            We strive for social, economic, and<br />
+            environmental prosperity for all
+          </p>
+        </div>
+      </li>
+      <li>
+        <p>
+          <img
+            src="https://www.hanwha.com/assets/img/main/technology-and-solution-driven-innovation.svg"
+            alt=""
+          />
+        </p>
+        <div class="txt">
+          <h3>
+            Technology and<br />
+            Solution-driven Innovation
+          </h3>
+          <p>
+            Through technological innovation,<br />
+            we provide solutions from people to planet
+          </p>
+        </div>
+      </li>
+      <li>
+        <p>
+          <img
+            src="https://www.hanwha.com/assets/img/main/hanwha-enhances-lives.svg"
+            alt=""
+          />
+        </p>
+        <div class="txt">
+          <h3>Enhancing<br />Lives</h3>
+          <p>
+            We lay the foundation for a fulfilling life through our<br />
+            technologies, products, and services
+          </p>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>

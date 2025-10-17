@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .yb {
+        width: 95%;
+        max-width: 1480px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .yb li {
+        display: flex;
+        align-items: center;
+        gap: 104px;
+        height: 440px;
+      }
+      .yb li:nth-child(even) {
+        flex-direction: row-reverse;
+        text-align: right;
+      }
+      .yb li p {
+        width: 720px;
+        height: 440px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .yb li p img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .yb li .txt {
+        width: 440px;
+        flex-shrink: 0;
+      }
+      @media screen and (max-width: 1024px) {
+        .yb li {
+          height: auto;
+        }
+        .yb li p {
+          width: 60%;
+          height: auto;
+        }
+        .yb li:nth-child(even) {
+          justify-content: space-between;
+          text-align: left;
+        }
+        .yb li .txt {
+          width: 30%;
+        }
+      }
+      @media screen and (max-width: 750px) {
+        .yb li {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 40px;
+        }
+        .yb li:nth-child(even) {
+          flex-direction: column;
+        }
+        .yb li p {
+          width: 100%;
+        }
+        .yb li .txt {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="yb">
+      <li>
+        <p>
+          <img
+            src="https://company.ybtour.co.kr/images/bg/bg_story_1.jpg"
+            alt=""
+          />
+        </p>
+        <div class="txt">
+          <h3>여행의 새로운 가치를 알립니다</h3>
+          <h1>가치를 전달하는 여행</h1>
+          <h2>Value-Creating</h2>
+        </div>
+      </li>
+      <li>
+        <p>
+          <img
+            src="https://company.ybtour.co.kr/images/bg/bg_story_2.jpg"
+            alt=""
+          />
+        </p>
+        <div class="txt">
+          <h3>고객의, 고객에 의한, 고객을 위한</h3>
+          <h1>신뢰를 받는 여행</h1>
+          <h2>Trustworthy</h2>
+        </div>
+      </li>
+      <li>
+        <p>
+          <img
+            src="https://company.ybtour.co.kr/images/bg/bg_story_3.jpg"
+            alt=""
+          />
+        </p>
+        <div class="txt">
+          <h3>일상의 가장 반짝이는 순간을 만듭니다</h3>
+          <h1>즐거움을 선사하는 여행</h1>
+          <h2>Joyful</h2>
+        </div>
+      </li>
+      <li>
+        <p>
+          <img
+            src="https://company.ybtour.co.kr/images/bg/bg_story_4.jpg"
+            alt=""
+          />
+        </p>
+        <div class="txt">
+          <h3>다양한 여행상품으로 여행 문화를 선도합니다</h3>
+          <h1>혁신적인 여행</h1>
+          <h2>Innovative</h2>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>
