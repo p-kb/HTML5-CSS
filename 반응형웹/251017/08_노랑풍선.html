@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
       * {
         margin: 0;
         padding: 0;
@@ -44,6 +46,27 @@
       .yb li .txt {
         width: 440px;
         flex-shrink: 0;
+        font-family: "Noto Sans", sans-serif;
+        letter-spacing: -1px;
+      }
+      .yb li .txt h3 {
+        font-size: 24px;
+        color: #777;
+        font-weight: 500;
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+      .yb li .txt h1 {
+        font-size: 48px;
+        color: #222;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+      .yb li .txt h2 {
+        font-size: 48px;
+        color: #ffc72c;
+        font-weight: 700;
+        line-height: 140%;
       }
       @media screen and (max-width: 1024px) {
         .yb li {
@@ -59,6 +82,15 @@
         }
         .yb li .txt {
           width: 30%;
+        }
+        .yb li .txt h3 {
+          font-size: 16px;
+        }
+        .yb li .txt h1 {
+          font-size: 22px;
+        }
+        .yb li .txt h2 {
+          font-size: 22px;
         }
       }
       @media screen and (max-width: 750px) {
