@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 90%;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+      }
+      .wrap > div:nth-child(1) {
+        position: absolute;
+        height: 142px;
+        width: 15%;
+        background: #ccc;
+      }
+      .wrap div:nth-child(2) {
+        height: 80px;
+        width: 100%;
+        background: #ccc;
+      }
+      .wrap div:nth-child(3) {
+        height: 440px;
+        width: 50%;
+        background: #bbb;
+      }
+      .wrap div:nth-child(4) {
+        height: 440px;
+        width: 25%;
+        background: #aaa;
+      }
+      .wrap div:nth-child(5) {
+        height: 440px;
+        width: 25%;
+        background: #ddd;
+      }
+      .wrap div:nth-child(6) {
+        height: 270px;
+        width: 30%;
+        background: #999;
+      }
+      .wrap div:nth-child(7) {
+        height: 270px;
+        width: 30%;
+        background: #777;
+      }
+      .wrap div:nth-child(8) {
+        height: 270px;
+        width: 25%;
+      }
+      .wrap div:nth-child(8) div:nth-child(1) {
+        height: calc(270px / 2);
+        width: 100%;
+        background: #888;
+      }
+      .wrap div:nth-child(8) div:nth-child(2) {
+        height: calc(270px / 2);
+        width: 100%;
+        background: #666;
+      }
+      .wrap div:nth-child(9) {
+        height: 270px;
+        width: 15%;
+        background: #555;
+      }
+      .wrap div:nth-child(10) {
+        height: 94px;
+        width: 100%;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

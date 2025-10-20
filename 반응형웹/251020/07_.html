@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        width: 95%;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      header {
+        position: relative;
+      }
+      header .logo {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 142px;
+        width: 12%;
+        background: #ccc;
+      }
+      header nav {
+        height: 80px;
+        width: 100%;
+        background: #ccc;
+      }
+      .con1 {
+        display: flex;
+        height: 440px;
+      }
+      .con1 > div:nth-child(1) {
+        width: 50%;
+        background: #bbb;
+      }
+      .con1 > div:nth-child(2) {
+        width: 28%;
+        background: #aaa;
+      }
+      .con1 > div:nth-child(3) {
+        width: 22%;
+        background: #ddd;
+      }
+      .con2 {
+        display: flex;
+        height: 270px;
+      }
+      .con2 > div:nth-child(1) {
+        width: 30%;
+        background: #999;
+      }
+      .con2 > div:nth-child(2) {
+        width: 30%;
+        background: #777;
+      }
+      .con2 > div:nth-child(3) {
+        width: 20%;
+      }
+      .con2 > div:nth-child(3) > div {
+        height: 50%;
+      }
+      .con2 > div:nth-child(3) > div:nth-child(1) {
+        background: #888;
+      }
+      .con2 > div:nth-child(3) > div:nth-child(2) {
+        background: #555;
+      }
+      .con2 > div:nth-child(4) {
+        width: 20%;
+        background: #666;
+      }
+      footer {
+        height: 94px;
+        background: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <p class="logo"></p>
+        <nav></nav>
+      </header>
+      <section class="con1">
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+      <section class="con2">
+        <div></div>
+        <div></div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div></div>
+      </section>
+      <footer></footer>
+    </div>
+  </body>
+</html>
