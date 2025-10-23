@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .list {
+        background-color: blue !important;
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <h2>Demo JavaScript in Head</h2>
+    <ul>
+      <li class="list">1</li>
+    </ul>
+    <p id="demo">A Paragraph</p>
+    <!-- <button type="button" onclick="myFunction()">Try it</button> -->
+    <button type="button" id="btn">Try it</button>
+    <script>
+      document.getElementById("btn").onclick = function () {
+        myFunction();
+      };
+      function myFunction() {
+        document.getElementById("demo").innerHTML = "Paragraph changed.";
+      }
+      document.getElementsByClassName("list")[0].style.fontSize = "50px";
+      document.getElementsByTagName("ul")[0].style.border = "1px solid";
+    </script>
+  </body>
+</html>
