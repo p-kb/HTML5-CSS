@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let x = 10;
+      let y = 20;
+      document.write("x + y = " + (x + y) + "<br>");
+      document.write("x + y = ", x + y, "<br>");
+
+      document.write("x - y = " + (x - y) + "<br>");
+      document.write("x * y = " + x * y + "<br>");
+      document.write("x / y = " + x / y + "<br>");
+      document.write("x % y = " + (x % y) + "<br>");
+      document.write("x ** y = " + x ** y + "<br>");
+
+      // document.write("x++", x++, "<br>");
+      // document.write("x", x, "<br>");
+      //후위연산 x 출력 후 +1
+
+      // document.write("++x", ++x, "<br>");
+      // document.write("x", x, "<br>");
+      // 전위연산 +1 후 x 출력
+      document.write((x = x + 1), "<br>");
+      document.write((x += 1), "<br>");
+
+      document.write("x--", x--, "<br>");
+      document.write("x", x, "<br>");
+
+      document.write("--x", --x, "<br>");
+      document.write("x", x, "<br>");
+    </script>
+  </body>
+</html>
