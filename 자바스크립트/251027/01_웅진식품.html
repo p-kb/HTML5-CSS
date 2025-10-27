@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      div {
+        width: 1480px;
+        margin: 50px auto;
+      }
+      div .btn {
+        padding: 0 25px;
+        margin: 50px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div .btn > li {
+        padding: 0 20px 12px;
+        border-bottom: 3px solid rgba(0, 0, 0, 0);
+      }
+      .brand .btn > li.on {
+        color: #71b200;
+        border-bottom: 3px solid #71b200;
+      }
+      div .con {
+        width: 1280px;
+        height: 220px;
+        position: relative;
+      }
+      div .con > li {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      div .con > li ul {
+        display: flex;
+      }
+      .brand .con > li.on {
+        display: block;
+      }
+      div .con > li ul li p {
+        width: 220px;
+        height: 220px;
+        border: 1px solid #dadada;
+        box-sizing: border-box;
+        margin-right: 45px;
+      }
+      div .con > li ul li p img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="brand">
+      <ul class="btn">
+        <li><a href="#">주스</a></li>
+        <li><a href="#">차</a></li>
+        <li>곡물</li>
+        <li>어린이</li>
+        <li>생수/탄산/이온</li>
+        <li>홍삼/건강/드링크</li>
+        <li>제과</li>
+        <li>해외수입제품</li>
+      </ul>
+      <ul class="con">
+        <li>
+          <ul>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/988f4c9d-4968-4fff-ac87-bee8bf0ca79d.png"
+                  alt=""
+                />
+              </p>
+            </li>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/dad9b103-f115-42a0-b0a5-cfd25561c3be.png"
+                  alt=""
+                />
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/25c76a16-a07f-46b9-b7a4-08d273053a5c.png"
+                  alt=""
+                />
+              </p>
+            </li>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/e30619e8-fe12-4aa9-ab8c-265f01436e49.png"
+                  alt=""
+                />
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/be03c11b-dbac-4ec9-984f-67a2f9772452.png"
+                  alt=""
+                />
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/fd015622-9e18-4d71-8d87-c446c80e01cc.png"
+                  alt=""
+                />
+              </p>
+            </li>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/e75b40f1-12ad-4642-acfd-823845df9283.png"
+                  alt=""
+                />
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/e12c803a-aa7a-45a0-bb5f-7cbc53621087.png"
+                  alt=""
+                />
+              </p>
+            </li>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/4b9a2a4c-a257-48a8-b4da-f63bbd4fe651.png"
+                  alt=""
+                />
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/101db18c-d5b8-4c0b-b401-bdae05dec587.png"
+                  alt=""
+                />
+              </p>
+            </li>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/68a17608-0532-4e7a-89bf-5e002b5fdfe5.png"
+                  alt=""
+                />
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/ebf54189-0e17-4376-89ce-842511533d2d.png"
+                  alt=""
+                />
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                <img
+                  src="https://www.wjfood.co.kr/uploads/brand/4733126d-f06f-47b5-ab27-1944b7a540e6.png"
+                  alt=""
+                />
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      let btn = document.querySelectorAll(".btn li");
+      let con = document.querySelectorAll(".con > li");
+
+      btn[0].classList.add("on");
+      con[0].classList.add("on");
+
+      btn.forEach(function (v, k, ar) {
+        v.onclick = function (e) {
+          e.preventDefault(); //a태그가 href 경로로 가는걸 방지
+          ar.forEach(function (v) {
+            v.classList.remove("on");
+          });
+          this.classList.add("on");
+          con.forEach(function (v) {
+            v.classList.remove("on");
+          });
+          con[k].classList.add("on");
+        };
+      });
+    </script>
+  </body>
+</html>
