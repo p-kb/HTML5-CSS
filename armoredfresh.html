@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      ul.list {
+        max-width: 1260px;
+        padding: 0 25px;
+        margin: 50px auto;
+        font-size: 24px;
+        font-family: "Archivo", sans-serif;
+        color: #d1a050;
+        box-sizing: border-box;
+      }
+      ul.list li {
+        border-bottom: 1px solid;
+        padding: 15px 20px;
+        font-size: 24px;
+        font-weight: 400;
+      }
+      ul.list li:first-child {
+        padding: 0;
+      }
+      ul.list li:first-child h1 {
+        font-size: 42px;
+        font-weight: 500;
+        margin: 80px 0 20px;
+      }
+      ul.list li:last-child {
+        border: none;
+      }
+      ul.list li p:first-child {
+        cursor: pointer;
+        height: 36px;
+        line-height: 36px;
+      }
+      ul.list span {
+        display: inline-block;
+        transition: 0.5s;
+      }
+      ul.list span.on {
+        transform: rotate(45deg);
+      }
+      ul.list li p:last-child {
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li><h1>Slices - Oat Base</h1></li>
+      <li>
+        <p><span>+</span> AMERICAN</p>
+        <p>
+          <img
+            src="https://d29wx3mrk1ysd0.cloudfront.net/_img/sub231114/SLICES-OATBASE-AMERICAN-pc.jpg"
+            alt=""
+          />
+        </p>
+      </li>
+      <li>
+        <p><span>+</span> CHEDDAR</p>
+        <p>
+          <img
+            src="https://d29wx3mrk1ysd0.cloudfront.net/_img/sub231114/SLICES-OATBASE-CHEDDAR-pc.jpg"
+            alt=""
+          />
+        </p>
+      </li>
+      <li>
+        <p><span>+</span> PROVOLONE</p>
+        <p>
+          <img
+            src="https://d29wx3mrk1ysd0.cloudfront.net/_img/sub231114/SLICES-OATBASE-PROVOLONE-pc.jpg"
+            alt=""
+          />
+        </p>
+      </li>
+      <li>
+        <p><span>+</span> PEPPER JACK</p>
+        <p>
+          <img
+            src="https://d29wx3mrk1ysd0.cloudfront.net/_img/sub231114/SLICES-OATBASE-PEPPERJACK-pc.jpg"
+            alt=""
+          />
+        </p>
+      </li>
+    </ul>
+
+    <script>
+      let btn = document.querySelectorAll(".list li");
+
+      btn.forEach(function (v, k, ar) {
+        v.onclick = function () {
+          let ht =
+            this.getElementsByTagName("p")[1].querySelector("img").clientHeight;
+          console.log("ht : " + ht);
+          let showCon = this.querySelector("span").classList.contains("on");
+          console.log(showCon);
+
+          if (showCon) {
+            this.querySelector("span").classList.remove("on");
+            this.getElementsByTagName("p")[1].style.height = 0;
+            this.querySelector("p:first-child").style.fontWeight = "400";
+          } else {
+            this.querySelector("span").classList.add("on");
+            this.getElementsByTagName("p")[1].style.height = ht + "px";
+            this.querySelector("p:first-child").style.fontWeight = "600";
+          }
+        };
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<style>
+  body,
+  html {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+  }
+  .video-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transition: opacity 0.6s ease-in-out;
+  }
+</style>
+
+<video id="videoA" class="video-layer" muted playsinline preload="auto"></video>
+<video
+  id="videoB"
+  class="video-layer"
+  muted
+  playsinline
+  preload="auto"
+  style="opacity: 0"
+></video>
+
+<script>
+  const videos = {
+    intro:
+      "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_1_intro.mp4",
+    loop2:
+      "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_2_loop.mp4",
+    v3: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_3.mp4",
+    loop4:
+      "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_4_loop.mp4",
+    v5: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_5.mp4",
+    loop6:
+      "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_6_loop.mp4",
+    r3: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_R_3.mp4",
+    r2: "https://d29wx3mrk1ysd0.cloudfront.net/video/PC_main_render_R_2.mp4",
+  };
+
+  const seqDown = [
+    videos.intro,
+    videos.loop2,
+    videos.v3,
+    videos.loop4,
+    videos.v5,
+    videos.loop6,
+  ];
+  const seqUp = [videos.r3, videos.loop4, videos.r2, videos.loop2];
+
+  let index = 0;
+  let current = "A";
+  const videoA = document.getElementById("videoA");
+  const videoB = document.getElementById("videoB");
+
+  function playVideo(src) {
+    const next = current === "A" ? videoB : videoA;
+    const prev = current === "A" ? videoA : videoB;
+
+    next.src = src;
+    next.currentTime = 0;
+    next.play();
+
+    next.style.opacity = 1;
+    prev.style.opacity = 0;
+
+    current = current === "A" ? "B" : "A";
+  }
+
+  // 초기 로드
+  playVideo(seqDown[0]);
+  videoA.addEventListener("ended", () => playVideo(seqDown[1]));
+
+  // 휠 이벤트
+  window.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0) {
+      // 스크롤 내림
+      index = Math.min(index + 1, seqDown.length - 1);
+      playVideo(seqDown[index]);
+    } else {
+      // 스크롤 올림
+      index = Math.min(index + 1, seqUp.length - 1);
+      playVideo(seqUp[index]);
+    }
+  });
+</script>
