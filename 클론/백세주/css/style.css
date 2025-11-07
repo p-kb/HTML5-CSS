@@ -39,15 +39,22 @@ section#maintop .visual p {
 section#maintop .visual p img {
   height: 100%;
 }
-section#maintop h6 {
+section#maintop .scroll {
   position: absolute;
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 13px;
   color: #999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-section#maintop > p {
+section#maintop .scroll h6 {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+section#maintop .scroll p {
   width: 24px;
 }
 main {
@@ -159,4 +166,16 @@ main section div::after {
   height: 8px;
   background-image: url(https://www.bekseju.com/images/ph.png);
   z-index: 3;
+}
+.ftop {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  margin-top: -7vmin;
+}
+footer {
+  position: relative;
+  background-color: #242902;
+  z-index: 5;
+  padding-bottom: 32px;
 }
