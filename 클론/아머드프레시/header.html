@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "Archivo";
+        src: url(./font/Archivo/Archivo-Regular.ttf);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      header {
+        width: 100%;
+        height: 6rem;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: #fff;
+        z-index: 9999;
+      }
+      header > .inner {
+        height: 100%;
+        padding: 0 3.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header > .inner > .logo {
+        width: 15.6rem;
+      }
+      header > .inner > .logo a img {
+        max-width: 13.7rem;
+        width: 100%;
+      }
+      header > .inner > nav {
+        flex-grow: 1;
+      }
+      header > .inner > nav > ul {
+        display: flex;
+        justify-content: flex-end;
+      }
+      header > .inner > nav > ul > li > a {
+        font-family: "Archivo";
+        display: block;
+        padding: 0.9rem 1.6rem;
+        color: #000;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      header > .inner > .burger {
+        width: 26px;
+        height: 30px;
+        position: relative;
+        margin-left: 1.3rem;
+        cursor: pointer;
+      }
+      header > .inner > .burger > span {
+        display: block;
+        width: 26px;
+        height: 2px;
+        background: #000;
+        position: absolute;
+        left: 0;
+        top: 4px;
+        border-radius: 2px;
+      }
+      header > .inner > .burger > span:nth-child(2) {
+        top: 14px;
+      }
+      header > .inner > .burger > span:nth-child(3) {
+        top: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <div class="logo">
+          <a href="./index.html">
+            <img
+              src="https://www.armoredfresh.com/theme/af_v02/layout/_img/comm/logo_w.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">our mission</a></li>
+            <li><a href="#">our products</a></li>
+            <li><a href="#">our innovation</a></li>
+            <li><a href="#">shop</a></li>
+            <li><a href="#">restaurant</a></li>
+            <li><a href="#">store locator</a></li>
+          </ul>
+        </nav>
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>

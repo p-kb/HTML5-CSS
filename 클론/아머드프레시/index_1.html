@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARMORED FRESH</title>
+    <title>Smooth Video Transition + Scroll Footer</title>
     <style>
       @font-face {
         font-family: "Archivo";
@@ -18,6 +18,11 @@
         margin: 0;
         padding: 0;
       }
+      html,
+      body {
+        height: 100%;
+        overflow: hidden; /* 처음에는 스크롤 금지 */
+      }
       ul {
         list-style: none;
       }
@@ -25,6 +30,7 @@
         text-decoration: none;
         color: #333;
       }
+
       header {
         width: 100%;
         height: 6rem;
@@ -101,38 +107,24 @@
         height: 100%;
         object-fit: cover;
         opacity: 0;
-        -webkit-appearance: none; /* Safari 등 안전장치 */
+        transition: opacity 0.8s ease;
+        -webkit-appearance: none;
       }
       .visible {
         opacity: 1;
       }
 
-      /* 모든 기본 비디오 컨트롤 제거 (크롬, 사파리 등) */
+      /* 기본 비디오 컨트롤 제거 */
       video::-webkit-media-controls {
         display: none !important;
-        -webkit-appearance: none;
-      }
-      video::-webkit-media-controls-enclosure {
-        display: none !important;
-      }
-      video::-webkit-media-controls-panel {
-        display: none !important;
-        opacity: 0 !important;
-      }
-      video::-webkit-media-controls-start-playback-button {
-        display: none !important;
-        -webkit-appearance: none;
       }
 
       footer {
-        position: sticky;
-        left: 0;
-        top: 0;
         max-width: 1230px;
         margin: 0 auto;
-        margin-top: -12px;
         padding: 3.7rem 0;
         font-family: "Archivo";
+        background: #fff;
       }
       footer > nav > ul {
         display: flex;
@@ -149,9 +141,6 @@
         width: 50%;
         position: relative;
       }
-      footer > .bot > .add > .info {
-        font-family: "Montserrat";
-      }
       footer > .bot > .add::after {
         content: "";
         position: absolute;
@@ -161,6 +150,17 @@
         top: 50%;
         transform: translateY(-50%);
         right: -4.4rem;
+      }
+
+      /* footer를 처음엔 화면 밖에 숨김 */
+      footer {
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 1s ease, opacity 1s ease;
+      }
+      footer.show {
+        transform: translateY(0);
+        opacity: 1;
       }
     </style>
   </head>
@@ -194,26 +194,11 @@
     </header>
 
     <section>
-      <video
-        id="videoA"
-        autoplay
-        muted
-        playsinline
-        webkit-playsinline
-        disablepictureinpicture
-        controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
-      ></video>
-      <video
-        id="videoB"
-        muted
-        playsinline
-        webkit-playsinline
-        disablepictureinpicture
-        controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
-      ></video>
+      <video id="videoA" autoplay muted playsinline webkit-playsinline></video>
+      <video id="videoB" muted playsinline webkit-playsinline></video>
     </section>
 
-    <footer>
+    <footer id="footer">
       <nav>
         <ul>
           <li><a href="#">our mission</a></li>
@@ -245,30 +230,9 @@
             Copyrightⓒ2022 All rights reserved by ARMORED FRESH
           </p>
         </div>
-        <div class="sns">
-          <a href="#"
-            ><img
-              src="https://www.armoredfresh.com/theme/af_v02/layout/_img/ico/icon_f2.png"
-              alt=""
-          /></a>
-          <a href="#"
-            ><img
-              src="https://www.armoredfresh.com/theme/af_v02/layout/_img/ico/icon_f3.png"
-              alt=""
-          /></a>
-          <a href="#"
-            ><img
-              src="https://www.armoredfresh.com/theme/af_v02/layout/_img/ico/icon_f4.png"
-              alt=""
-          /></a>
-          <a href="#"
-            ><img
-              src="https://www.armoredfresh.com/theme/af_v02/layout/_img/ico/icon_f1.png"
-              alt=""
-          /></a>
-        </div>
       </div>
     </footer>
+
     <script>
       const videos = {
         intro:
@@ -287,12 +251,23 @@
 
       const videoA = document.getElementById("videoA");
       const videoB = document.getElementById("videoB");
+      const footer = document.getElementById("footer");
       let current = videoA;
       let next = videoB;
       let stage = 0;
       let isTransitioning = false;
+      let footerVisible = false;
 
-      /** 부드러운 전환 함수 **/
+      function enableScroll() {
+        document.body.style.overflow = "auto";
+        footer.classList.add("show");
+        footerVisible = true;
+      }
+
+      function disableScroll() {
+        document.body.style.overflow = "hidden";
+      }
+
       function fadePlay(src, loop = false, nextLoop = null, nextStage = stage) {
         isTransitioning = true;
 
@@ -301,7 +276,6 @@
         next.currentTime = 0;
         next.classList.remove("visible");
 
-        // 영상이 로드될 때만 전환 실행
         next.oncanplay = () => {
           next.play();
           next.classList.add("visible");
@@ -313,6 +287,11 @@
             stage = nextStage;
             isTransitioning = false;
 
+            // 마지막 루프(6번) 끝나면 footer 표시
+            if (src === videos.loop6) {
+              enableScroll();
+            }
+
             // 다음 루프 이벤트 설정
             if (nextLoop) {
               current.onended = () => fadePlay(nextLoop, true, null, stage);
@@ -321,7 +300,7 @@
             }
           }, 800);
 
-          next.oncanplay = null; // 중복 이벤트 방지
+          next.oncanplay = null;
         };
       }
 
@@ -332,7 +311,7 @@
 
       /** 스크롤 이벤트 **/
       window.addEventListener("wheel", (e) => {
-        if (isTransitioning) return;
+        if (isTransitioning || footerVisible) return;
 
         if (e.deltaY > 0) {
           // scroll down
@@ -345,6 +324,7 @@
           // scroll up
           if (stage === 2) {
             fadePlay(videos.R3, false, videos.loop4, 1);
+            disableScroll();
           } else if (stage === 1) {
             fadePlay(videos.R2, false, videos.loop2, 0);
           }
